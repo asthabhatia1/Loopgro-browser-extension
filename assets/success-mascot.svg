@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <!-- Cheering Cloud -->
+  <path d="M 25 60 
+           A 15 15 0 0 1 37 32 
+           A 22 22 0 0 1 78 32 
+           A 15 15 0 0 1 95 60 
+           A 12 12 0 0 1 87 76 
+           L 33 76 
+           A 12 12 0 0 1 25 60 Z" 
+        fill="#ffffff" stroke="#78ce9f" stroke-width="4"/>
+  
+  <!-- Happy Eyes (carets) -->
+  <path d="M 44 48 L 48 44 L 52 48" fill="none" stroke="#5c4a4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 68 48 L 72 44 L 76 48" fill="none" stroke="#5c4a4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Open mouth -->
+  <circle cx="60" cy="56" r="4.5" fill="#fca1a7" stroke="#5c4a4f" stroke-width="2"/>
+  
+  <!-- Cheering hands -->
+  <path d="M 20 50 Q 15 44 12 50" fill="none" stroke="#78ce9f" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 100 50 Q 105 44 108 50" fill="none" stroke="#78ce9f" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Little Sparkles -->
+  <path d="M 60 12 L 61 15 L 64 16 L 61 17 L 60 20 L 59 17 L 56 16 L 59 15 Z" fill="#f8c070"/>
+</svg>

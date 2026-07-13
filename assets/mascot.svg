@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Marshmallow Body Shadow -->
+  <rect x="25" y="34" width="70" height="66" rx="20" fill="#ffb5c5" opacity="0.2"/>
+  
+  <!-- Marshmallow Body -->
+  <rect x="20" y="30" width="70" height="66" rx="20" fill="#ffffff" stroke="#ffb5c5" stroke-width="4"/>
+  
+  <!-- Little Blush cheeks -->
+  <ellipse cx="36" cy="70" rx="8" ry="5" fill="#ffccd5"/>
+  <ellipse cx="74" cy="70" rx="8" ry="5" fill="#ffccd5"/>
+  
+  <!-- Cute Happy Eyes -->
+  <path d="M 40 60 Q 44 56 48 60" fill="none" stroke="#5c4a4f" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 64 60 Q 68 56 72 60" fill="none" stroke="#5c4a4f" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Smile -->
+  <path d="M 52 70 Q 56 76 60 70" fill="none" stroke="#5c4a4f" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Sparkles/Stickers -->
+  <path d="M 85 20 L 87 25 L 92 27 L 87 29 L 85 34 L 83 29 L 78 27 L 83 25 Z" fill="#f8c070"/>
+  <path d="M 15 85 L 16 88 L 19 89 L 16 90 L 15 93 L 14 90 L 11 89 L 14 88 Z" fill="#ffb5c5"/>
+</svg>

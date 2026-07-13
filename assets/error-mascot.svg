@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <!-- Crying/Sweating Cloud -->
+  <path d="M 25 60 
+           A 15 15 0 0 1 37 32 
+           A 22 22 0 0 1 78 32 
+           A 15 15 0 0 1 95 60 
+           A 12 12 0 0 1 87 76 
+           L 33 76 
+           A 12 12 0 0 1 25 60 Z" 
+        fill="#ffffff" stroke="#fca1a7" stroke-width="4"/>
+  
+  <!-- Sad eyes (inverted arches) -->
+  <path d="M 44 46 Q 48 50 52 46" fill="none" stroke="#5c4a4f" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 68 46 Q 72 50 76 46" fill="none" stroke="#5c4a4f" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Sad wavy mouth -->
+  <path d="M 56 60 Q 60 56 64 60" fill="none" stroke="#5c4a4f" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Drop of sweat/tear -->
+  <path d="M 94 48 C 94 51, 91 54, 88 54 C 85 54, 85 51, 88 48 C 88 48, 94 48, 94 48 Z" fill="#78ce9f"/>
+</svg>

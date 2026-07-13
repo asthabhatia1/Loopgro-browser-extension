@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>loopgro CRM Dashboard</title>
+  
+  <!-- Link global design variables -->
+  <link rel="stylesheet" href="../theme.css">
+  
+  <!-- Link dashboard stylesheets -->
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <!-- Dashboard Main Layout Wrapper (Sidebar + Main Panel Grid) -->
+  <div class="dashboard-container">
+    
+    <!-- Sidebar Navigation Menu -->
+    <aside class="sidebar">
+      <!-- Brand/Logo Section -->
+      <div class="brand-section">
+        <div class="logo-circle">
+          <!-- Self-healing customizable logo loader supporting jpeg, png, jpg, and svg -->
+          <img src="../assets/logo.jpeg" class="brand-logo-img" alt="Logo" onerror="
+            if (this.src.indexOf('.jpeg') !== -1) {
+              this.src = this.src.replace('.jpeg', '.png');
+            } else if (this.src.indexOf('.png') !== -1) {
+              this.src = this.src.replace('.png', '.jpg');
+            } else if (this.src.indexOf('.jpg') !== -1) {
+              this.src = this.src.replace('.jpg', '.svg');
+            } else {
+              this.onerror = null;
+            }
+          ">
+        </div>
+        <div class="brand-text">
+          <h1 class="main-title">Loopgro CRM</h1>
+          <p class="sub-title">Version 1.1.0</p>
+        </div>
+      </div>
+      
+      <!-- Tab Controls list -->
+      <nav class="nav-menu">
+        <button type="button" class="nav-item active" id="tabBtnDatabase" data-tab="database">
+          <!-- Database customizable icon -->
+          <img src="../assets/icon-database.svg" class="nav-icon" alt="Database">
+          Database
+        </button>
+        <button type="button" class="nav-item" id="tabBtnSettings" data-tab="settings">
+          <!-- Gear customizable icon -->
+          <img src="../assets/icon-settings.svg" class="nav-icon" alt="Settings">
+          Settings
+        </button>
+      </nav>
+
+      <!-- Sidebar decorative illustration (Soot Sprites) -->
+      <div class="sidebar-deco-container">
+        <img src="../assets/soot-sprites.png" class="sidebar-deco-img" alt="Soot Sprites">
+      </div>
+      
+      <!-- Footer storage state indicator badge -->
+      <div class="sidebar-footer">
+        <span class="storage-indicator" id="storageModeBadge">Loading...</span>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content-panel">
+      
+      <!-- SCREEN 1: DATABASE TAB (influencer table grid) -->
+      <div class="tab-content" id="tabContentDatabase">
+        
+        <!-- Header row -->
+        <header class="content-header">
+          <div class="header-content-wrapper">
+            <div class="header-titles">
+              <h2 class="content-title">Influencers Database</h2>
+              <p class="content-description">View, filter, and modify your outreach list dynamically. All cell changes auto-save.</p>
+            </div>
+          </div>
+        </header>
+
+        <!-- Key Metrics Cards -->
+        <section class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon-bg count-bg">
+              <!-- Susuwatari icon from assets -->
+              <img src="../assets/metric-saved.png" class="metric-mini-img" alt="Susuwatari">
+            </div>
+            <div class="metric-details">
+              <span class="metric-label">Total Saved</span>
+              <span class="metric-value" id="totalSavedMetric">0</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon-bg budget-bg">
+              <!-- No Face icon from assets -->
+              <img src="../assets/metric-budget.png" class="metric-mini-img" alt="No Face">
+            </div>
+            <div class="metric-details">
+              <span class="metric-label">Accepted</span>
+              <span class="metric-value" id="acceptedMetric">0</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon-bg sent-bg">
+              <!-- Calcifer icon from assets -->
+              <img src="../assets/metric-sent.png" class="metric-mini-img" alt="Calcifer">
+            </div>
+            <div class="metric-details">
+              <span class="metric-label">Acceptance Rate</span>
+              <span class="metric-value" id="acceptanceRateMetric">0%</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Search Toolbar -->
+        <section class="toolbar-section">
+          <div class="search-box-container">
+            <span class="search-icon-placeholder">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by username, followers, posts, acceptance, or comments…">
+          </div>
+          <button type="button" class="btn btn-secondary" id="syncSheetBtn" style="padding: 10px 16px; width: auto; display: flex; align-items: center; gap: 8px;">
+            <!-- Sync icon from assets -->
+            <img src="../assets/icon-sync.svg" class="sync-btn-icon" alt="Sync">
+            Sync Google Sheet
+          </button>
+        </section>
+
+        <!-- CRM Table container -->
+        <div class="table-card">
+          <div class="table-wrapper">
+            <table class="crm-table" id="crmTable">
+              <thead>
+                <tr>
+                  <th class="col-username">Username</th>
+                  <th class="col-url">Instagram Profile</th>
+                  <th class="col-acceptance">Acceptance</th>
+                  <th class="col-followers">Follower Count</th>
+                  <th class="col-posts">Post Count</th>
+                  <th class="col-comments">Comments</th>
+                  <th class="col-date">Last Updated</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <tr>
+                  <td colspan="8" class="table-loading-cell">
+                    <img src="../assets/loading.svg" class="loading-spinner" alt="Loading"><br>
+                    <span>Fetching spreadsheet records...</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Fallback when no matching elements found -->
+          <div class="empty-state hidden" id="emptyState">
+            <img src="../assets/empty-state.svg" class="empty-illustration" alt="No data">
+            <p class="empty-text">No influencers found matching your query.</p>
+            <p class="empty-subtext">Save creators from Instagram to populate the sheet!</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SCREEN 2: SETTINGS TAB -->
+      <div class="tab-content hidden" id="tabContentSettings">
+        
+        <header class="content-header">
+          <div class="header-titles">
+            <h2 class="content-title">CRM Settings</h2>
+            <p class="content-description">Configure your shared Google Sheet integration and secure API endpoints.</p>
+          </div>
+        </header>
+
+        <div class="settings-card">
+          <!-- Sparkles decorations inside card -->
+          <div class="settings-deco-left">🌸</div>
+          <div class="settings-deco-right">✨</div>
+          
+          <div class="settings-form">
+            
+            <!-- Group 1: Google Sheet URL -->
+            <div class="settings-group">
+              <label for="googleSheetUrlInput" class="settings-label">Shared Google Sheet URL</label>
+              <input type="text" id="googleSheetUrlInput" class="settings-input-field" placeholder="https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit?usp=sharing">
+              <p class="settings-helper-text">
+                Paste the full URL of your team's Google Sheet. All members using this extension must have access to this URL.
+              </p>
+            </div>
+
+            <!-- Group 2: Apps Script URL -->
+            <div class="settings-group">
+              <label for="appsScriptUrlInput" class="settings-label">Secure Apps Script Web App URL</label>
+              <input type="text" id="appsScriptUrlInput" class="settings-input-field" placeholder="https://script.google.com/macros/s/SCRIPT_ID/exec">
+              <p class="settings-helper-text">
+                The deployed URL of your Google Apps Script Web App. This endpoint securely writes data to your sheet without exposing OAuth credentials.
+              </p>
+            </div>
+
+            <!-- Status Indicator Panel -->
+            <div class="status-panel hidden" id="statusPanel">
+              <span class="status-indicator-icon" id="statusPanelIcon"></span>
+              <p class="status-panel-text" id="statusPanelText">Testing connection...</p>
+            </div>
+
+            <!-- Settings action buttons -->
+            <div class="settings-actions">
+              <button type="button" class="btn btn-secondary" id="testConnectionBtn">Test Connection</button>
+              <button type="button" class="btn btn-primary" id="saveSettingsBtn">Save Settings</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      
+    </main>
+
+  </div>
+
+  <!-- Load dashboard orchestrator scripts -->
+  <script src="dashboard.js"></script>
+</body>
+</html>

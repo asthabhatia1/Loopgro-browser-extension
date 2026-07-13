@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Node (if ever used)
+node_modules/
+npm-debug.log*
+
+# Build output
+dist/
+build/
+
+# Secrets — never commit real API keys or deployed script URLs
+*.env
+.env.local

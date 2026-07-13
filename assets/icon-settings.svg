@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#5c4a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Flower shape configuration gear -->
+  <path d="M12 2a10 10 0 0 0-1 3.5A10 10 0 0 0 7.5 7.5 10 10 0 0 0 4 6.5a10 10 0 0 0 0 3 10 10 0 0 0 3.5 1 10 10 0 0 0 1 3.5 10 10 0 0 0-3.5 1 10 10 0 0 0 0 3 10 10 0 0 0 3.5-1 10 10 0 0 0 1 3.5 10 10 0 0 0 3.5 1 10 10 0 0 0 1-3.5 10 10 0 0 0 3.5-1 10 10 0 0 0 3.5 1a10 10 0 0 0 0-3 10 10 0 0 0-3.5-1c0-1.2-.4-2.3-1-3.5a10 10 0 0 0 3.5-1 10 10 0 0 0 0-3a10 10 0 0 0-3.5 1 10 10 0 0 0-1-3.5A10 10 0 0 0 13 2.5a10 10 0 0 0-1-.5z" 
+        fill="#fbf3e6" stroke="#ffb5c5" stroke-width="2"/>
+  <circle cx="12" cy="12" r="3.5" fill="#ffffff" stroke="#ffb5c5" stroke-width="2"/>
+</svg>

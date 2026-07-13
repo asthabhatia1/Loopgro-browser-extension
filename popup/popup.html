@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Ensure proper rendering and touch zooming on mobile devices, if applicable -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Influencer Outreach</title>
+  
+  <!-- Link to the design system theme variables -->
+  <link rel="stylesheet" href="../theme.css">
+  
+  <!-- Link to the styling sheet -->
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Container wrapper to control maximum size and paddings -->
+  <div class="container">
+    
+    <!-- Header of the extension popup -->
+    <header class="header">
+      <div class="logo-area">
+        <!-- Self-healing customizable logo loader supporting jpeg, png, jpg, and svg -->
+        <img src="../assets/logo.jpeg" class="logo-icon" alt="Logo" onerror="
+          if (this.src.indexOf('.jpeg') !== -1) {
+            this.src = this.src.replace('.jpeg', '.png');
+          } else if (this.src.indexOf('.png') !== -1) {
+            this.src = this.src.replace('.png', '.jpg');
+          } else if (this.src.indexOf('.jpg') !== -1) {
+            this.src = this.src.replace('.jpg', '.svg');
+          } else {
+            this.onerror = null;
+          }
+        ">
+        <h1 class="title">Loopgro</h1>
+      </div>
+      <span class="status-badge" id="statusBadge">Active</span>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Section indicating the active/scraped Instagram profile -->
+      <section class="profile-card" id="profileCard">
+        <h2 class="section-title">Current Profile</h2>
+        <!-- This container displays extracted profile data or a prompt message -->
+        <div class="profile-details" id="profileDetails">
+          <p class="placeholder-text" id="placeholderText">Loading profile details...</p>
+          
+          <!-- Container for holding the scraped profile info (hidden by default) -->
+          <div class="profile-data hidden" id="profileData">
+            <div class="data-item">
+              <span class="data-label">Username:</span>
+              <span class="data-value font-semibold" id="usernameVal">-</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Profile URL:</span>
+              <a href="#" target="_blank" class="data-value link" id="urlVal">-</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Outreach Form Fields (Followers, Posts, Comments, Acceptance) -->
+      <section class="form-section" id="formSection">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="followerCountInput" class="input-label">Followers</label>
+            <input type="text" id="followerCountInput" class="form-input" placeholder="-">
+          </div>
+          
+          <div class="form-group">
+            <label for="postCountInput" class="input-label">Posts</label>
+            <input type="text" id="postCountInput" class="form-input" placeholder="-">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="commentsInput" class="input-label">Comments</label>
+          <textarea id="commentsInput" class="form-textarea" placeholder="Add notes about this creator..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="input-label">Acceptance</label>
+          <div class="slide-toggle-container">
+            <input type="hidden" id="acceptanceValue" value="No">
+            <div class="slide-toggle" id="acceptanceToggle">
+              <div class="slide-toggle-option active" data-val="No">No</div>
+              <div class="slide-toggle-option" data-val="Yes">Yes</div>
+              <div class="slide-toggle-thumb"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Action Buttons Grid -->
+      <section class="buttons-grid" id="buttonsGrid">
+        <button type="button" class="btn btn-primary" id="saveCreatorBtn">Save Creator</button>
+        <button type="button" class="btn btn-secondary" id="dashboardBtn">CRM Dashboard</button>
+      </section>
+    </main>
+
+    <!-- Footer for settings, help, or branding -->
+    <footer class="footer">
+      <p class="footer-text">Instagram Outreach Extension v1.0.0</p>
+      <div class="footer-actions" style="display: flex; align-items: center; gap: 10px;">
+        <a href="#" class="footer-link" id="openDashboardLink" style="font-size: 11px; font-weight: 600; color: var(--accent-color); text-decoration: none;" title="Open CRM Dashboard">Open CRM</a>
+        <a href="#" class="settings-link" id="settingsLink" title="Settings">
+          <!-- Load settings gear icon from assets -->
+          <img src="../assets/icon-settings.svg" class="footer-icon" alt="Settings">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Load the scripts that will orchestrate the logic -->
+  <script src="popup.js"></script>
+</body>
+</html>

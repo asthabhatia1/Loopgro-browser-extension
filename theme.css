@@ -1,0 +1,69 @@
+/*
+  loopgro Kawaii Theme System Configuration
+  
+  This file defines the visual layout constants for the loopgro Chrome Extension.
+  By modifying the values in this file, you can completely customize the color scheme,
+  typography, border radius, animations, and box shadows throughout the application.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap');
+
+:root {
+  /* ==========================================
+     TYPOGRAPHY
+     ========================================== */
+  --font-primary: 'Quicksand', 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Nunito', sans-serif;
+
+  /* ==========================================
+     COLOR PALETTE (Strawberry Milk & Cream)
+     ========================================== */
+  /* Background colors */
+  --bg-main: #ffffff;           /* Soft pastel strawberry milk pink */
+  --bg-card: #ffffff;           /* Sweet clean snowy white */
+  --bg-cream: #fffdf9;          /* Cozy custard-cream warm white */
+  
+  /* Text colors */
+  --text-primary: #5c4a4f;      /* Soft warm cocoa-brown for premium readability */
+  --text-secondary: #8c767c;    /* Rose-grey for subtitles and secondary details */
+  --text-muted: #c8b0b6;        /* Light pink-grey for placeholder values */
+  
+  /* Pastel brand accents */
+  --accent-pink: #6e806f;       /* Baby sakura pink */
+  --accent-hover: #3a4b41;      /* Sweet strawberry pink on hover */
+  --accent-light: #ffffff;      /* Milky pink for active states and selections */
+  --accent-cream: #fbf3e6;      /* Peach cream accents */
+  
+  /* Borders and Dividers */
+  --border-color: #9c9b9b;      /* Soft rosebud-pink borders */
+  
+  /* Semantic indicators (Pastel tones) */
+  --color-success: #2e6547;     /* Sweet mint green */
+  --color-success-bg: #eefcf4;  /* Mint tea green */
+  --color-warning: #f8c070;     /* Cozy honey yellow */
+  --color-warning-bg: #fffaf0;  /* Honey milk cream */
+  --color-danger: #fca1a7;      /* Soft strawberry red */
+  --color-danger-bg: #fff5f6;   /* Milky strawberry red background */
+
+  /* ==========================================
+     LAYOUT CONSTANTS
+     ========================================== */
+  /* Border Radius (Cozy and heavily rounded!) */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+
+  /* Box Shadows (Soft and airy pink-cream drop shadows) */
+  --shadow-sm: 0 4px 6px -1px rgba(255, 181, 197, 0.15), 0 2px 4px -2px rgba(255, 181, 197, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(255, 181, 197, 0.18), 0 4px 6px -4px rgba(255, 181, 197, 0.12);
+  --shadow-lg: 0 20px 25px -5px rgba(255, 181, 197, 0.22), 0 8px 10px -6px rgba(255, 181, 197, 0.15);
+
+  /* ==========================================
+     ANIMATIONS & TRANSITIONS
+     ========================================== */
+  /* Standard smooth transition */
+  --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Playful bouncy hover effect transition */
+  --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
